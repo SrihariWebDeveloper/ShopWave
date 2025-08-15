@@ -35,7 +35,7 @@ const AddProduct = ({token}) => {
       image3 && formData.append("image3",image3);
       image4 && formData.append("image4",image4);
 
-      const response = await axios.post("http://localhost:3000/api/products/add",formData,{headers:{token}});
+      const response = await axios.post("https://shopwave-97x5.onrender.com/api/products/add",formData,{headers:{token}});
 
       if(response.data.success){
         toast.success(response.data.message);
