@@ -15,7 +15,7 @@ const ShopContextProvider = (props) =>{
 
     const getProducts = async()=>{
         try {
-            const response = await axios.get('http://localhost:3000/api/products/list');
+            const response = await axios.get('https://shopwave-97x5.onrender.com/api/products/list');
             if(response.data.success){
                 setProducts(response.data.prodcuts);
             }else{
@@ -49,7 +49,7 @@ const ShopContextProvider = (props) =>{
         setAddCart(cartItem);
         if(token){
             try {
-                await axios.post("http://localhost:3000/api/cart/add",{itemId,size},{headers:{token}});
+                await axios.post("https://shopwave-97x5.onrender.com/api/cart/add",{itemId,size},{headers:{token}});
                 toast.success("Added to Cart");
             } catch (error) {
                 console.log(error)
@@ -82,7 +82,7 @@ const ShopContextProvider = (props) =>{
         setAddCart(cartData);
         if(token){
             try {
-                await axios.post("http://localhost:3000/api/cart/update",{itemId,size,quantity},{headers:{token}});
+                await axios.post("https://shopwave-97x5.onrender.com/api/cart/update",{itemId,size,quantity},{headers:{token}});
             } catch (error) {
                 console.log(error)
                 toast.error(error.message);
@@ -93,7 +93,7 @@ const ShopContextProvider = (props) =>{
     const getUserCart = async(token)=>{
         try {
 
-            const responce = await axios.post("http://localhost:3000/api/cart/get",{},{headers:{token}});
+            const responce = await axios.post("https://shopwave-97x5.onrender.com/api/cart/get",{},{headers:{token}});
 
             if(responce.data.success){
                 setAddCart(responce.data.cartData);
