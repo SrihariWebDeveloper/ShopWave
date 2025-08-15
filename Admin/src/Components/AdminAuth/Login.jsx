@@ -11,7 +11,7 @@ const Login = ({setToken}) => {
     const onSubmitHandler = async(e)=>{
       try {
         e.preventDefault();
-        const response = await axios.post("http://localhost:3000/api/user/admin",{email,password});
+        const response = await axios.post("https://shopwave-97x5.onrender.com/api/user/admin",{email,password});
         if(response.data.success){
           setToken(response.data.token);
         }else{
