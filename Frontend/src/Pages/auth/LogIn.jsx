@@ -15,7 +15,7 @@ const LogIn = () => {
   const handleSubmit = async(e)=>{
     e.preventDefault()
     if(auth==="Login"){
-      const responce = await axios.post("http://localhost:3000/api/user/login",{email,password});
+      const responce = await axios.post("https://shopwave-97x5.onrender.com/api/user/login",{email,password});
       if(responce.data.success){
         setToken(responce.data.token);
         localStorage.setItem("token",responce.data.token);
@@ -23,7 +23,7 @@ const LogIn = () => {
         toast.error(responce.data.message);
       }
     }else{
-      const responce = await axios.post("http://localhost:3000/api/user/register",{name,email,password});
+      const responce = await axios.post("https://shopwave-97x5.onrender.com/api/user/register",{name,email,password});
       if(responce.data.success){
         setToken(responce.data.token);
         localStorage.setItem("token",responce.data.token);
