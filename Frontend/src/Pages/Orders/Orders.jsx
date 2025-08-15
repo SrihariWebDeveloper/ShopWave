@@ -14,7 +14,7 @@ const Orders = () => {
             toast.error("Please Login!!");
             return null;
           }
-            const response = await axios.post('http://localhost:3000/api/order/userorders',{},{headers:{token}});
+            const response = await axios.post('https://shopwave-97x5.onrender.com/api/order/userorders',{},{headers:{token}});
             if(response.data.success){
                 let allOrders = [];
                 response.data.Orders.map((order)=>{
