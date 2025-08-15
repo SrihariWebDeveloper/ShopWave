@@ -10,7 +10,7 @@ const Orders = ({token}) => {
 
   const fetchOrders = async()=>{
     try {
-      const response = await axios.post("http://localhost:3000/api/order/list",{},{headers:{token}});
+      const response = await axios.post("https://shopwave-97x5.onrender.com/api/order/list",{},{headers:{token}});
       if(response.data.success){
         setOrders(response.data.Orders);
       }else{
