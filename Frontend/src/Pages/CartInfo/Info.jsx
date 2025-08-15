@@ -62,7 +62,7 @@ const Info = () => {
 
       switch(payment){
         case 'cod':
-          const response = await axios.post("http://localhost:3000/api/order/place",orderData,{headers:{token}});
+          const response = await axios.post("https://shopwave-97x5.onrender.com/api/order/place",orderData,{headers:{token}});
           if(response.data.success){
             toast.success(response.data.message);
             navigator("/orders");
