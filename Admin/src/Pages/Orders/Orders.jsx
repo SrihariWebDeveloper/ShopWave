@@ -24,7 +24,7 @@ const Orders = ({token}) => {
 
   const updateStatus = async(event,orderId)=>{
     try {
-      const response = await axios.post("http://localhost:3000/api/order/status",{orderId,status:event.target.value},{headers:{token}});
+      const response = await axios.post("https://shopwave-97x5.onrender.com/api/order/status",{orderId,status:event.target.value},{headers:{token}});
 
       if(response.data.success){
         await fetchOrders();
