@@ -8,7 +8,7 @@ const ListProducts = ({token}) => {
   const [products,setProducts] = useState([]);
   const getProducts = async()=>{
     try {
-      const responce = await axios.get("http://localhost:3000/api/products/list");
+      const responce = await axios.get("https://shopwave-97x5.onrender.com/api/products/list");
       if(responce.data.success){
         setProducts(responce.data.prodcuts);
       }else{
@@ -21,7 +21,7 @@ const ListProducts = ({token}) => {
 
   const removeProduct = async(id)=>{
     try {
-      const response = await axios.post("http://localhost:3000/api/products/remove",{id},{headers:{token}});
+      const response = await axios.post("https://shopwave-97x5.onrender.com/api/products/remove",{id},{headers:{token}});
       if(response.data.success){
         toast.success(response.data.message);
         await getProducts();
