@@ -4,6 +4,7 @@ import Logo_dark from "../../assets/logo-ecomerce.png";
 import cart_icon from "../../assets/cart_icon.png";
 import search_icon from "../../assets/search_icon.png";
 import profile_icon from "../../assets/profile_icon.png";
+import menu from "../../assets/menu-bars-icon-7.jpg";
 import cross_icon from "../../assets/cross_icon.png";
 import { ShopContext } from "../Context/Context.jsx";
 
@@ -60,9 +61,9 @@ const NavBar = () => {
           <div className="flex flex-row justify-between">
             <div className="ml-2">
               <img
-                src={profile_icon}
+                src={menu}
                 alt=""
-                className="w-6 mt-6 md:w-0 lg:w-0 lg:hidden md:hidden cursor-pointer overflow-hidden"
+                className="w-12 mt-6 md:w-0 lg:w-0 lg:hidden md:hidden cursor-pointer overflow-hidden"
                 onClick={() => setVisible(true)}
               />
             </div>
@@ -70,7 +71,7 @@ const NavBar = () => {
               <img
                 src={Logo_dark}
                 alt=""
-                className="w-28 lg:w-40 md:w-30 cursor-pointer"
+                className="w-36 lg:w-40 md:w-36 cursor-pointer"
                 onClick={() => navigate("/")}
               />
             </div>
